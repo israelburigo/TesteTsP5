@@ -27,11 +27,12 @@ const sketch = function (p5: p5): any {
     lines.push(new Line(p5, w - 100, h + 100, 0, w - 100, h + 100, 200));
   };
 
-  p5.draw = () => {
+  p5.draw = () => {    
+
+   lines.rotate(0.01, p5.createVector(p5.width / 2, p5.height/2, 200/2))
 
     p5.background("black");
     lines.draw();
-    lines.rotate(0.01, p5.createVector(p5.width / 2, p5.height/2, 200/2))
   };
 };
 
