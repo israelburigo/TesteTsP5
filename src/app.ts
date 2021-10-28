@@ -29,7 +29,9 @@ const sketch = function (p5: p5): any {
 
   p5.draw = () => {    
 
-   lines.rotate(0.01, p5.createVector(p5.width / 2, p5.height/2, 200/2))
+    const dt = p5.deltaTime / 1000
+
+   lines.rotate(dt, p5.createVector(p5.width / 2, p5.height/2, 200/2))
 
     p5.background("black");
     lines.draw();
