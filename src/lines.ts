@@ -1,5 +1,5 @@
 import p5 from "p5";
-import { IPaint } from "./ipaint";
+import { IPaint } from "./drawable-component";
 import { Line } from "./line";
 
 export class Lines implements IPaint {
@@ -13,7 +13,7 @@ export class Lines implements IPaint {
     this._items.forEach((p) => p.draw());
   }
 
-  rotate(rad: number, origin: p5.Vector): void {
+  rotate(rad: number, origin: p5.Vector): void {    
     this._items.forEach((p) => {
       p.transform(this.rotateX(rad), origin);
       p.transform(this.rotateY(rad), origin);

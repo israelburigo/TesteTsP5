@@ -1,7 +1,9 @@
 {
-  "name": "p5js-with-typescript",
+  "name": "testp5ts",
+  "author": "israelburigo",
   "version": "1.0.0",
-  "description": "A template for a p5.js sketch using Typescript",
+  "license": "MIT",
+  "description": "",  
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
