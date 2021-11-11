@@ -20,12 +20,12 @@ export class Dot implements IPaint {
   update(dt: number): void {}
 
   draw(): void {
-    // this._p5.push();
+    this._p5.push();
     this._p5.stroke(this._color);
     const x = this._p.x * origin.zoom + origin.coords.x;
     const y = this._p.y * origin.zoom + origin.coords.y;
     this._p5.circle(x, y, 1);
-    // this._p5.pop();
+    this._p5.pop();
   }
 
   calculate(quads: number[]): void {

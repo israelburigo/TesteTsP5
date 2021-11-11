@@ -84,15 +84,15 @@ export class Func implements IPaint {
       return;
     }
     if (event.delta < 0) {
-      origin.zoom += 0.01;
+      origin.zoom += 0.1;
       if (origin.zoom > 10) origin.zoom = 10;
     } else {
-      origin.zoom -= 0.01;
-      if (origin.zoom < 0.01) origin.zoom = 0.01;
+      origin.zoom -= 0.1;
+      if (origin.zoom < 0.1) origin.zoom = 0.1;
     }
   }
 
-  mouseHandler(): void {
+  mouseHandler(): void {    
     if (this._p5.mouseIsPressed && !this._mouseDown) {
       this._mouseDown = true;
       this._lastPoint = { x: this._p5.mouseX, y: this._p5.mouseY };
@@ -106,8 +106,8 @@ export class Func implements IPaint {
       const x = this._p5.mouseX - this._lastPoint.x;
       const y = this._p5.mouseY - this._lastPoint.y;
 
-      const radX = x < 0 ? -0.1 : x > 0 ? 0.1 : 0;
-      const radY = y < 0 ? -0.1 : y > 0 ? 0.1 : 0;
+      const radX = x < 0 ? -0.2 : x > 0 ? 0.2 : 0;
+      const radY = y < 0 ? 0.2 : y > 0 ? -0.2 : 0;
       if (radX != 0)
         this._dots.forEach((p) => {
           transformVector(p.coords(), matrix3dY(radX), this._dotsOrigin);

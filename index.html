@@ -9,11 +9,24 @@
 		/>
 	</head>
 
-	<body>
+	<body>		
+		Move: Left click
+		<br>
+		Zoom: Wheel
+		<br>
+		Rotate: Center click
+		<br>
+		<br>
+		F(x, z): <input id="fxz" style="width: 300px;" value="0.02*x^2 + 0.02*z^2" >
+		<input type="button" value="Calculate" id="coolbutton"></input>		
+    </input>
+		<br>
+		<br>		
 		<div class="container">			
-			<div id="app"></div>
+			<div id="app"></div>			
 		</div>
-		<script src="src/app.ts"></script>
-		<script src="https://unpkg.com/regenerator-runtime@0.13.1/runtime.js"></script>
+
+		<script src="src/app.ts"></script>		
+		
 	</body>
 </html>

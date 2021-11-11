@@ -17,17 +17,28 @@ const sketch = function (p5: p5): any {
       p.update(dt);
       p.draw();
     });
-    
+
     p5.push();
     p5.fill(0xff, 0xff, 0xff);
-    p5.text("fps: " + 1 / dt, 10, 30);
+    p5.text("fps: " + Number(1 / dt).toFixed(0), 10, 30);
     p5.pop();
   };
 };
 
 const canvas = new p5(sketch);
-const paints: Array<IPaint> = [];
+const fxz = document.getElementById("fxz").value;
+let paints: Array<IPaint> = [];
+const func = new Func(canvas, fxz);
+
+paints.push(func);
 origin.coords = { x: drawWindow.w / 2, y: drawWindow.h / 2, z: 0 };
 
-const func = new Func(canvas, "(0.02*x^2 + 0.02*z^2)");
-paints.push(func);
+const btn = document.getElementById("coolbutton");
+btn.addEventListener("click", (e: Event) => buttonClick());
+
+function buttonClick() {
+  const fxz = document.getElementById("fxz").value;
+  const func = new Func(canvas, fxz);
+  paints = [];
+  paints.push(func);
+}
