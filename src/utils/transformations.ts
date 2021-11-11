@@ -1,9 +1,10 @@
+import { cos, matrix, sin } from "mathjs";
 import p5 from "p5";
 
 export function transformVector(
   v: p5.Vector,
   m: number[][],
-  origin: p5.Vector
+  origin: { x: number; y: number; z: number }
 ): void {
   const dx = v.x - origin.x;
   const dy = v.y - origin.y;
@@ -14,4 +15,28 @@ export function transformVector(
   v.x = x + origin.x;
   v.y = y + origin.y;
   v.z = z + origin.z;
+}
+
+export function matrix3dX(rad: number): number[][] {
+  return [
+    [1, 0, 0],
+    [0, cos(rad), -sin(rad)],
+    [0, sin(rad), cos(rad)],
+  ];
+}
+
+export function matrix3dY(rad: number): number[][] {
+  return [
+    [cos(rad), 0, sin(rad)],
+    [0, 1, 0],
+    [-sin(rad), 0, cos(rad)],
+  ];
+}
+
+export function matrix3dZ(rad: number): number[][] {
+  return [
+    [cos(rad), -sin(rad), 0],
+    [sin(rad), cos(rad), 0],
+    [0, 0, 1],
+  ];
 }
