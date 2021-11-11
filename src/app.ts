@@ -17,11 +17,6 @@ const sketch = function (p5: p5): any {
       p.update(dt);
       p.draw();
     });
-
-    p5.push();
-    p5.fill(0xff, 0xff, 0xff);
-    p5.text("fps: " + Number(1 / dt).toFixed(0), 10, 30);
-    p5.pop();
   };
 };
 

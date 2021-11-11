@@ -4,7 +4,7 @@
   "description": "A template for a p5.js sketch using Typescript",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html --open",
+    "start": "parcel serve index.html",
     "build": "parcel build index.html",
     "deploy": "gh-pages -d dist"
   },
@@ -18,7 +18,9 @@
   "devDependencies": {
     "@babel/preset-env": "^7.16.0",
     "parcel-bundler": "^1.6.1",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "gh-pages": "^2.0.1",
+    "cross-env": "^5.0.1"
   },
   "keywords": [
     "p5js",
